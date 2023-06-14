@@ -79,6 +79,20 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
   </ItemGroup>
+  
+  <!-- Including Sage50 SDK -->
+  <ItemGroup>
+	<Reference Include="Sage_SA.Domain">
+		<HintPath>..\lib\Sage_SA.Domain.dll</HintPath>
+	</Reference>
+	<Reference Include="Sage_SA.Domain.Utility">
+		<HintPath>..\lib\Sage_SA.Domain.Utility.dll</HintPath>
+	</Reference>
+	<Reference Include="Sage_SA.SDK">
+		<HintPath>..\lib\Sage_SA.SDK.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
@@ -142,4 +156,10 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  
+  <!-- Post Build configuration: Copy all and overwrite all the dll files to project output directories -->
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+	<Exec Command="xcopy /Y /E &quot;$(ProjectDir)..\lib\*.dll&quot; &quot;$(TargetDir)&quot;" />
+  </Target>
+  
 </Project>
