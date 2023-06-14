@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 
-namespace Sage50API
+namespace CustomerAPI
 {
     public static class WebApiConfig
     {
