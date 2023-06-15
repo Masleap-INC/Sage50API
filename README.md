@@ -72,3 +72,714 @@ The API returns either a 400 status code for a bad request or a 200 status code 
 | :--- | :--- |
 | 200 | `OK` |
 | 400 | `BAD REQUEST` |
+
+
+
+## Actions: Sales Invoice
+
+`CREATE`
+```
+{
+  "requests": [
+    {
+      "action": "create_sales_invoice",
+      "body": {
+        "cusven_name": "",
+        "invoice_number": "",
+        "invoice_date": "",
+        "paid_by_type": "",
+        "cheque_number": "",
+        "detail_lines": [
+          {
+            "item_number": "",
+            "item_description": "",
+            "quantity": "",
+            "price": "",
+            "tax_code": "",
+            "line_amount": "",
+            "ledger_account": "",
+            "tax_lines": [
+              {
+                "tax_authority": "",
+                "tax_amount": ""
+              }
+            ]
+          }
+        ],
+        "tax_lines": [
+          {
+            "tax_authority": "",
+            "tax_amount": ""
+          }
+        ]
+      }
+    }
+  ]
+}
+```
+
+`GET`
+```
+{
+  "requests": [
+    {
+      "action": "lookup_sales_invoice",
+      "body": {
+        "find_cusven_name": "",
+        "find_invoice_number": ""
+      }
+    }
+  ]
+}
+```
+
+`UPDATE`
+```
+{
+  "requests": [
+    {
+      "action": "adjust_sales_invoice",
+      "body": {
+        "find_cusven_name": "",
+        "find_invoice_number": "",
+        "cusven_name": "",
+        "invoice_number": "",
+        "invoice_date": "",
+        "paid_by_type": "",
+        "cheque_number": "",
+        "detail_lines": [
+          {
+            "item_number": "",
+            "item_description": "",
+            "quantity": "",
+            "price": "",
+            "tax_code": "",
+            "line_amount": "",
+            "ledger_account": "",
+            "tax_lines": [
+              {
+                "tax_authority": "",
+                "tax_amount": ""
+              }
+            ]
+          }
+        ],
+        "tax_lines": [
+          {
+            "tax_authority": "",
+            "tax_amount": ""
+          }
+        ]
+      }
+    }
+  ]
+}
+```
+
+`DELETE`
+```
+{
+  "requests": [
+    {
+      "action": "void_sales_invoice",
+      "body": {
+        "find_cusven_name": "",
+        "find_invoice_number": ""
+      }
+    }
+  ]
+}
+```
+
+## Actions: Purchase Invoice
+
+`CREATE`
+```
+{
+  "requests": [
+    {
+      "action": "create_purchase_invoice",
+      "body": {
+        "cusven_name": "",
+        "invoice_number": "",
+        "invoice_date": "",
+        "paid_by_type": "",
+        "cheque_number": "",
+        "detail_lines": [
+          {
+            "item_number": "",
+            "item_description": "",
+            "quantity": "",
+            "price": "",
+            "tax_code": "",
+            "line_amount": "",
+            "ledger_account": "",
+            "tax_lines": [
+              {
+                "tax_authority": "",
+                "tax_amount": ""
+              }
+            ]
+          }
+        ],
+        "tax_lines": [
+          {
+            "tax_authority": "",
+            "tax_amount": ""
+          }
+        ]
+      }
+    }
+  ]
+}
+```
+
+`GET`
+```
+{
+  "requests": [
+    {
+      "action": "lookup_purchase_invoice",
+      "body": {
+        "find_cusven_name": "",
+        "find_invoice_number": ""
+      }
+    }
+  ]
+}
+```
+
+`UPDATE`
+```
+{
+  "requests": [
+    {
+      "action": "adjust_purchase_invoice",
+      "body": {
+        "find_cusven_name": "",
+        "find_invoice_number": "",
+        "cusven_name": "",
+        "invoice_number": "",
+        "invoice_date": "",
+        "paid_by_type": "",
+        "cheque_number": "",
+        "detail_lines": [
+          {
+            "item_number": "",
+            "item_description": "",
+            "quantity": "",
+            "price": "",
+            "tax_code": "",
+            "line_amount": "",
+            "ledger_account": "",
+            "tax_lines": [
+              {
+                "tax_authority": "",
+                "tax_amount": ""
+              }
+            ]
+          }
+        ],
+        "tax_lines": [
+          {
+            "tax_authority": "",
+            "tax_amount": ""
+          }
+        ]
+      }
+    }
+  ]
+}
+```
+
+`DELETE`
+```
+{
+  "requests": [
+    {
+      "action": "void_purchase_invoice",
+      "body": {
+        "find_cusven_name": "",
+        "find_invoice_number": ""
+      }
+    }
+  ]
+}
+```
+
+## Actions: General Journal
+
+`CREATE`
+```
+{
+  "requests": [
+    {
+      "action": "create_general_journal",
+      "body": {
+        "journal_date": "",
+        "source": "",
+        "comment": "",
+        "detail_lines": [
+          {
+            "ledger_account": "",
+            "debit_amount": "",
+            "credit_amount": "",
+            "comment": ""
+          },
+          {
+            "ledger_account": "",
+            "debit_amount": "",
+            "credit_amount": "",
+            "comment": ""
+          }
+        ]
+      }
+    }
+  ]
+}
+```
+
+`GET`
+```
+{
+  "requests": [
+    {
+      "action": "lookup_general_journal",
+      "body": {
+        "find_journal_id": "",
+        "find_journal_is_last_year": false
+      }
+    }
+  ]
+}
+```
+
+`UPDATE`
+```
+{
+  "requests": [
+    {
+      "action": "adjust_general_journal",
+      "body": {
+        "find_journal_id": "",
+        "journal_date": "",
+        "source": "",
+        "comment": "",
+        "detail_lines": [
+          {
+            "ledger_account": "",
+            "debit_amount": "",
+            "credit_amount": "",
+            "comment": ""
+          },
+          {
+            "ledger_account": "",
+            "debit_amount": "",
+            "credit_amount": "",
+            "comment": ""
+          }
+        ]
+      }
+    }
+  ]
+}
+```
+
+## Actions: Customer
+
+`CREATE`
+```
+{
+  "requests": [
+    {
+      "action": "create_customer",
+      "body": {
+        "name": "",
+        "contact_name": "",
+        "street1": "",
+        "street2": "",
+        "city": "",
+        "province": "",
+        "country": "",
+        "postal_code": "",
+        "phone1": "",
+        "phone2": "",
+        "fax": "",
+        "email": "",
+        "website": "",
+        "currency_code": ""
+      }
+    }
+  ]
+}
+```
+
+`GET`
+```
+{
+  "requests": [
+    {
+      "action": "lookup_customer",
+      "body": {
+        "find_name": ""
+      }
+    }
+  ]
+}
+```
+
+`UPDATE`
+```
+{
+  "requests": [
+    {
+      "action": "adjust_customer",
+      "body": {
+        "find_name": "",
+        "name": "",
+        "contact_name": "",
+        "street1": "",
+        "street2": "",
+        "city": "",
+        "province": "",
+        "country": "",
+        "postal_code": "",
+        "phone1": "",
+        "phone2": "",
+        "fax": "",
+        "email": "",
+        "website": "",
+        "currency_code": ""
+      }
+    }
+  ]
+}
+```
+
+## Actions: Vendor
+
+`CREATE`
+```
+{
+  "requests": [
+    {
+      "action": "create_vendor",
+      "body": {
+        "name": "",
+        "contact_name": "",
+        "street1": "",
+        "street2": "",
+        "city": "",
+        "province": "",
+        "country": "",
+        "postal_code": "",
+        "phone1": "",
+        "phone2": "",
+        "fax": "",
+        "email": "",
+        "website": "",
+        "currency_code": "",
+        "tax_id": ""
+      }
+    }
+  ]
+}
+```
+
+`GET`
+```
+{
+  "requests": [
+    {
+      "action": "lookup_vendor",
+      "body": {
+        "find_name": ""
+      }
+    }
+  ]
+}
+```
+
+`UPDATE`
+```
+{
+  "requests": [
+    {
+      "action": "adjust_vendor",
+      "body": {
+        "find_name": "",
+        "name": "",
+        "contact_name": "",
+        "street1": "",
+        "street2": "",
+        "city": "",
+        "province": "",
+        "country": "",
+        "postal_code": "",
+        "phone1": "",
+        "phone2": "",
+        "fax": "",
+        "email": "",
+        "website": "",
+        "currency_code": "",
+        "tax_id": ""
+      }
+    }
+  ]
+}
+```
+
+## Actions: Inventory
+
+`CREATE`
+```
+{
+  "requests": [
+    {
+      "action": "create_inventory",
+      "body": {
+        "name": "",
+        "part_code": "",
+        "name_alt": "",
+        "is_service": false,
+        "is_activity": false,
+        "stocking_unit": "",
+        "stocking_unit_alt": "",
+        "price_regular": "",
+        "price_preferred": "",
+        "account_asset": "",
+        "account_revenue": "",
+        "account_expense": "",
+        "account_variance": ""
+      }
+    }
+  ]
+}
+```
+
+`GET`
+```
+{
+  "requests": [
+    {
+      "action": "lookup_inventory",
+      "body": {
+        "find_part_code": ""
+      }
+    }
+  ]
+}
+```
+
+`UPDATE`
+```
+{
+  "requests": [
+    {
+      "action": "adjust_inventory",
+      "body": {
+        "find_part_code": "",
+        "name": "",
+        "part_code": "",
+        "name_alt": "",
+        "is_service": false,
+        "is_activity": false,
+        "price_regular": "",
+        "price_preferred": "",
+        "account_asset": "",
+        "account_revenue": "",
+        "account_expense": "",
+        "account_variance": ""
+      }
+    }
+  ]
+}
+```
+
+## Actions: Employee
+
+`CREATE`
+```
+{
+  "requests": [
+    {
+      "action": "create_employee",
+      "body": {
+        "name": "",
+        "street1": "",
+        "street2": "",
+        "city": "",
+        "province": "",
+        "postal_code": "",
+        "phone1": "",
+        "phone2": "",
+        "sin": "",
+        "birth_date": "",
+        "hire_date": "",
+        "tax_table_province": "",
+        "pay_periods": ""
+      }
+    }
+  ]
+}
+```
+
+`GET`
+```
+{
+  "requests": [
+    {
+      "action": "lookup_employee",
+      "body": {
+        "find_name": ""
+      }
+    }
+  ]
+}
+```
+
+`UPDATE`
+```
+{
+  "requests": [
+    {
+      "action": "adjust_employee",
+      "body": {
+        "find_name": "",
+        "name": "",
+        "street1": "",
+        "street2": "",
+        "city": "",
+        "province": "",
+        "postal_code": "",
+        "phone1": "",
+        "phone2": "",
+        "sin": "",
+        "birth_date": "",
+        "hire_date": "",
+        "tax_table_province": "",
+        "pay_periods": ""
+      }
+    }
+  ]
+}
+```
+
+## Actions: Project
+
+`CREATE`
+```
+{
+  "requests": [
+    {
+      "action": "create_project",
+      "body": {
+        "name": "",
+        "name_alt": "",
+        "start_date": ""
+      }
+    }
+  ]
+}
+```
+
+`GET`
+```
+{
+  "requests": [
+    {
+      "action": "lookup_project",
+      "body": {
+        "find_name": ""
+      }
+    }
+  ]
+}
+```
+
+`UPDATE`
+```
+{
+  "requests": [
+    {
+      "action": "adjust_project",
+      "body": {
+        "find_name": "",
+        "name": "",
+        "name_alt": "",
+        "start_date": ""
+      }
+    }
+  ]
+}
+```
+
+## Actions: Chart of Accounts
+
+`CREATE`
+```
+{
+  "requests": [
+    {
+      "action": "create_account",
+      "body": {
+        "name": "",
+        "name_alt": "",
+        "account_number": "",
+        "account_class": "",
+        "account_type": ""
+      }
+    }
+  ]
+}
+```
+
+`GET`
+```
+{
+  "requests": [
+    {
+      "action": "lookup_account",
+      "body": {
+        "find_account_number": ""
+      }
+    }
+  ]
+}
+```
+
+`UPDATE`
+```
+{
+  "requests": [
+    {
+      "action": "adjust_account",
+      "body": {
+        "find_account_number": "",
+        "name": "",
+        "name_alt": "",
+        "account_number": "",
+        "account_class": "",
+        "account_type": ""
+      }
+    }
+  ]
+}
+```
+
+## Actions: NoQuery SQL
+
+`REQUEST`
+```
+{
+  "requests": [
+    {
+      "action": "create_sql_non_query",
+      "body": {
+        "sql_non_query": ""
+      }
+    }
+  ]
+}
+```
+
