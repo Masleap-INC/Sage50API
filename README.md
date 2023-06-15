@@ -24,7 +24,7 @@ To access the database, make a POST request to the specified URL, providing the 
 
 When making the API request, include the following JSON body structure as an example:
 
-```json 
+```javascript 
 {
   "requests": [
     {
@@ -37,6 +37,10 @@ When making the API request, include the following JSON body structure as an exa
 }
 ```
 
+Make a POST request to the following API endpoint to access the PosterRequest functionality:
+```javascript
+http://localhost:49243/api/PosterRequest?username=sysadmin&password=sysadmin&multiuser=false
+```
 
 ## Responses
 
